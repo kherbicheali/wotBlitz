@@ -1,31 +1,43 @@
 package com.wotBlitz.spring.controllers;
 
+import com.wotBlitz.spring.model.Tank;
+import com.wotBlitz.spring.service.ManagerTankService;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 public class TankManagerController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(TankManagerController.class);
+	
+	@Autowired(required = true)
+	@Qualifier("managerTankService")
+	private ManagerTankService managerTankService;
 	
 	@GetMapping("/test")
 	public String test() {
 		logger.info("-- url=/test");
 		return "test:mehenna";
 	}
+	
+	
 	@GetMapping("/tanklist")
-	public String tankList () {
+	public List<Tank> tankList () {
 		logger.info("-- url=/tanklist");
-		String bob =
-				" status: NOT_FOUND"
-				+ " errors:0"
-				+ " timestamp: 2019–03–13T07:47:10.990+0000"
-				+ " message: Requested stop with code — STPF does not exist.";
-		return bob; 
+		//List<String> listTank = new ArrayList<String>();
+		//listTank.add("label:T62A, dpm:3550, speed:50, gunDepression:7, healthPoints:1800, frontalPoints:230, silver Alpha:310, goldAlpha:280, heAlpha:420");
+		
+		return managerTankService.findAll(); 
 	}
 	
 	@GetMapping("/deletetank")

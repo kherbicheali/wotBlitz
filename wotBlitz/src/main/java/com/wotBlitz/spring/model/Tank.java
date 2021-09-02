@@ -11,7 +11,10 @@ public class Tank {
 	
 	@Id
 	private String label;
+	private String tier;
 	private String type;
+	private String nation;
+	private String category;
 	private int dpm;
 	private int speed;
 	private int frontalArmor;
@@ -24,6 +27,15 @@ public class Tank {
 	public Tank () {}
 	public String getLabel(){
 		return label;
+	}
+	public String getTier(){
+		return tier;
+	}
+	public String getNation(){
+		return nation;
+	}
+	public String getCategory(){
+		return category;
 	}
 	public String getType(){
 		return type;
@@ -55,6 +67,15 @@ public class Tank {
 	
 	public void setLabel(String label){
 		this.label = label;
+	}
+	public void setTier(String tier){
+		this.tier = tier;
+	}
+	public void setNation(String nation){
+		this.nation = nation;
+	}
+	public void setCategory(String category){
+		this.category = category;
 	}
 	public void setType(String type){
 		this.type = type;

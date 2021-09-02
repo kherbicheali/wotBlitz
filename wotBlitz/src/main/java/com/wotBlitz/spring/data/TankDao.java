@@ -4,11 +4,13 @@ import com.wotBlitz.spring.model.Tank;
 import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.stereotype.Repository;
 import com.wotBlitz.spring.data.EMProvider;
 
+@Repository
 public class TankDao implements IDao <String, Tank> {
 	private static final Logger logger = LoggerFactory.getLogger(TankDao.class);
+	
 	
 	public Tank save(Tank entity) {
 		logger.info("-- save()");
