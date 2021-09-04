@@ -39,7 +39,7 @@ public class TankDao implements IDao <String, Tank> {
 	public List<Tank> findAll(){
 		logger.info("-- findAll()");
 		EMProvider.beginTransaction();
-		List<Tank> listTank = EMProvider.getEntityManager().createNamedQuery("Entity.findAll").getResultList();
+		List<Tank> listTank = EMProvider.getEntityManager().createNamedQuery("Tank.findAll").getResultList();
 		EMProvider.commit();
 		return listTank;
 	}

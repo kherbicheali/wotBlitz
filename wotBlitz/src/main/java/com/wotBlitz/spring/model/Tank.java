@@ -4,9 +4,12 @@ import java.util.List;
 import javax.persistence.Table;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 
 @Entity
 @Table(name = "TANK")
+@NamedQueries({ @NamedQuery(name = "Tank.findAll", query = "select p from Tank p") })
 public class Tank {
 	
 	@Id
