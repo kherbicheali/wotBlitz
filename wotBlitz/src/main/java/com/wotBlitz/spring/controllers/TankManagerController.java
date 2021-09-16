@@ -1,7 +1,7 @@
 package com.wotBlitz.spring.controllers;
 
 import com.wotBlitz.spring.model.Tank;
-import com.wotBlitz.spring.service.ManagerTankService;
+import com.wotBlitz.spring.service.IManagerTankService;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -22,7 +22,7 @@ public class TankManagerController {
 	
 	@Autowired(required = true)
 	@Qualifier("managerTankService")
-	private ManagerTankService managerTankService;
+	private IManagerTankService managerTankService;
 	
 	@GetMapping("/test")
 	public String test() {

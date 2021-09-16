@@ -4,13 +4,12 @@ import com.wotBlitz.spring.model.Tank;
 import com.wotBlitz.spring.data.IDao;
 import java.util.List;
 import com.wotBlitz.spring.model.Tank;
-//import org.springframework.stereotype.Service;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Component("managerTankService")
+@Service("managerTankService")
 public class ManagerTankService implements IManagerTankService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(ManagerTankService.class);
